@@ -97,7 +97,7 @@ section {
     justify-content: center; /*Centralização horizontal*/
     align-items: center; /*Centralização vertical*/
     flex-direction: column; /*itens filhos em coluna na vertical*/
-    background-color: var(--cor-section);
+    background-image: url('img/background-cinza.jpg');
     width: 75%;
     margin: 5px;
     color: var(--cor-texto2);
@@ -107,7 +107,7 @@ aside {
     display: flex;
     justify-content: center; /*Centralização horizontal*/
     align-items: center; /*Centralização vertical*/
-    background-color: var(--cor-section);
+    background-image: url('img/background-cinza.jpg');
     width: 25%;
     margin: 5px;
     color: var(--cor-texto2);
@@ -117,8 +117,8 @@ article {
     display: flex;
     justify-content: center; /*Centralização horizontal*/
     align-items: center; /*Centralização vertical*/
+    text-align: justify;
     background-color: linen;
-    margin: 5px;
     min-height: 100px;
     width: 100%;
     color: var(--cor-texto2)
