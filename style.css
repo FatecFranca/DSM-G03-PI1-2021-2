@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+/*Varáveis*/
+:root {
+    --cor-prim: #F9D84D;
+    --cor-prim-clara: #FD9CA3;
+    --cor-secun: #F94D58;
+    --cor-secun-clara: #FD9CA3;
+    --cor-fundo: #333333;
+    --cor-footer: #864E17;
+    --cor-texto: #EEEEEE;
+    --cor-texto2: #1F2235;
+    --cor-section: #D6C5B5;
+    --fonte-texto: font-family: 'Raleway', sans-serif;
+    --fonte-titulo: font-family: 'Raleway', sans-serif;
+}
+/************* CSS reset ********************************/
+* { /*O "*" significa tudo*/
+    font-family: 'Raleway', sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;  /*borda faz parte das dimensões do elemento*/
+    /*background-color: var(--cor-fundo);
+    */
+    color: var(--cor-texto);
+    
+}
+/********************************************************/
+
+header {
+    display: flex;
+    justify-content: center; /*Centralização horizontal*/
+    align-items: center; /*Centralização vertical*/
+    background-image: url('img/background.jpg');
+    min-height: 50px; /* altura mínima */
+    flex-wrap: wrap; /*força a quebra de linhas entre elementos flex*/
+}
+
+#img-logo {
+    background-color: transparent;
+    width: 200px;
+    border-radius: 150px;
+}
+
+#menu-principal {
+    display: flex;
+    justify-content: center; /*Centralização horizontal*/
+    align-items: center; /*Centralização vertical*/
+    background-image: url('img/background-nav.jpg');
+    min-height: 25px; /* altura mínima */
+    width: 100%;
+    }
+
+#menu-principal ul {/*afesta a lista do menu principal*/
+    list-style: none; /*tira a decoração da lista*/
+    display: flex; /*Container flex - todos os itens filhos na horizontal*/
+}
+
+#menu-principal ul li {
+    height: 46px;
+    margin: 0 10px; /* 0 topo; 10 esquerda e direita*/
+    }
+
+#menu-principal ul li a {
+    font-family: 'Raleway', sans-serif;
+    display: flex;
+    height: 46px;
+    align-items: center;
+    padding: 0 10px;
+    color: var(--cor-texto);
+    text-decoration: none;
+    background-image: url('img/background-nav.jpg');
+    transition: 300ms;/*afeta a velocidade dos efeitos - deve ser colocada no estado de repouso*/
+}
+
+#menu-principal ul li a:hover {/*efeito quando o mouse passa em cima*/
+    filter: brightness(0.8);/*muda o brilho (valores menores que 1, escurece, maiores que 1 clareia*/
+}
+
+main {
+    display: flex;
+    justify-content: center; /*Centralização horizontal*/
+    align-items: stretch; /*filhos com 100% da altura do pai*/
+    min-height: 200px; /* altura mínima */
+}
+
+footer {
+    display: flex;
+    justify-content: center; /*Centralização horizontal*/
+    align-items: center; /*Centralização vertical*/
+    background-color: var(--cor-footer);
+    min-height: 50px; /* altura mínima */
+}
+
+section {
+    display: flex;
+    justify-content: center; /*Centralização horizontal*/
+    align-items: center; /*Centralização vertical*/
+    flex-direction: column; /*itens filhos em coluna na vertical*/
+    background-color: var(--cor-section);
+    width: 75%;
+    margin: 5px;
+    color: var(--cor-texto2);
+    
+}
+aside {
+    display: flex;
+    justify-content: center; /*Centralização horizontal*/
+    align-items: center; /*Centralização vertical*/
+    background-color: var(--cor-section);
+    width: 25%;
+    margin: 5px;
+    color: var(--cor-texto2);
+    }
+
+article {
+    display: flex;
+    justify-content: center; /*Centralização horizontal*/
+    align-items: center; /*Centralização vertical*/
+    background-color: linen;
+    margin: 5px;
+    min-height: 100px;
+    width: 100%;
+    color: var(--cor-texto2)
+}
+
+@media screen and (max-width: 600px) {
+    main {
+        /*muda a direção dos filhos para colunas (vertical)*/
+        flex-direction: column;
+        }
+    section {
+        width: 100%;
+    }
+    aside {
+        width: 100%;
+    }
+}
+    
