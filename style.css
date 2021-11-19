@@ -40,6 +40,7 @@ header {
     background-color: transparent;
     width: 200px;
     border-radius: 150px;
+    padding: 15px;
 }
 
 /* nav #social */
@@ -130,10 +131,11 @@ section {
 }
 
 section h1 {
-    color: var(--cor-texto2);
+    color: var(--cor-texto);
     font-style: italic;
     text-align: right;
-    text-shadow: 3px 3px 4px #333333;
+    text-shadow: 3px 3px 4px #000000;
+    
 }
 
 aside {
