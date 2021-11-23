@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ana Clara &bull; Psicóloga</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <img id="img-logo" src="img/logo.svg" alt="logotipo Ana Clara"><!--Imagem de logo-->
+
+        <nav id="social">
+            <ul>
+                <li>
+                    <a href="https://www.facebook.com/annerezendee" title="Facebook Ana Clara">
+                        <img src="img/facebook-64x64.png" alt="Facebook">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.instagram.com/rezendeanaclarapsi/" title="Instagram Ana Clara">
+                        <img src="img/instagram-64x64.png" alt="Instagram">
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="https://wa.me/5516991302258" title="Contato Whatsapp">
+                        <img src="img/whatsapp-64x64.png" alt="whatsapp">
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <nav id="menu-principal">
+            <ul>
+                <li>
+                    <a href="#">Home</a>
+                </li>
+                <li>
+                    <a href="#">Abordagem</a>
+                </li>
+                <li>
+                    <a href="#">Sobre meus atendimentos</a>
+                </li>
+                <li>
+                    <a href="#">Contato</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <!--Main (área principal de conteúdo)-->
+        <section class="content">
+
+            <div class="contato">
+                <h3>Formulário de contato</h3>
+                <form class="form" method="POST" action="./email.php">
+                    <input class="fild" name="name" placeholder="Nome">
+                    <input class="fild" name = "email" placeholder="E-mail">
+                    <textarea class="field" name="mesage" placeholder="Digite sua duvida aqui."></textarea>
+                    <input type="submit" value= "Enviar">
+                </form>
+            </div>
+        </section>
+        
+        
+
+    </main>
+
+    <footer>
+        Footer (Rodapé)
+    </footer>
+</body>
+</html>
