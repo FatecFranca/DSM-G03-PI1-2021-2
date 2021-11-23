@@ -9,7 +9,11 @@
     <style>
         body{font-family: Arial, Helvetica, sans-serif }
         .content{display: flex;justify-content: center}
-        .contato{width: 100%;max}
+        .contato{width: 100%;max-width: 500px;}
+        .form{display: flex;flex-direction: column}
+        .field{padding: 10px; margin-bottom: 15px;border: 1px solid #DDD;border-radius: 5px; font-family: Arial, Helvetica, sans-serif;font-size: 16px;}
+        textarea{height: 150px;}
+        
 
 
     </style>
@@ -24,10 +28,10 @@
         <div class="contato">
             <h3>Formulário de contato</h3>
             <form class="form" method="POST" action="./email.php">
-                <input class="fild" name="name" placeholder="Nome">
-                <input class="fild" name = "email" placeholder="E-mail">
+                <input class="field" name="name" placeholder="Nome">
+                <input class="field" name = "email" placeholder="E-mail">
                 <textarea class="field" name="mesage" placeholder="Digite sua duvida aqui."></textarea>
-                <input type="submit" value= "Enviar">
+                <input class="field"type="submit" value= "Enviar">
             </form>
         </div>
     </section>
