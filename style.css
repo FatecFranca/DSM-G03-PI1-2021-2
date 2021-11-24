@@ -102,6 +102,45 @@ header {
     filter: brightness(0.8);/*muda o brilho (valores menores que 1, escurece, maiores que 1 clareia*/
 }
 
+#menu-contraido {
+    display: inline-block;
+    position: relative;
+  }
+  
+  /* Input checkbox e o span têm o mesmo tamanho e estão um sobre o outro */
+  #menu-contraido input, #menu-contraido span {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+  #menu-contraido input {
+    /* Quanto maior o z-index, mais acima (pensando em camadas) o elemento estará.
+       O padrão do z-index é 0. */
+    z-index: 100;
+    opacity: 0;   /* Esconde o checkbox */
+    display: none;
+  }
+  
+  #menu-contraido span {
+    display: block;
+    background-color:#ECDCB5;
+    border-radius: 4px;
+    border: 2px solid var(--cor-texto);
+    background-image: url('img/menu-icon-48x48.png');
+    background-size: 40px;
+    background-position: center center;
+    cursor: pointer;  /* Cursor de "mãozinha" para links */
+    display: none;
+  }
+  
+  /* O seletor ~ seleciona o elemento irmão */
+  #menu-contraido input:checked ~ span {
+    background-image: url('img/close-icon-48x48.png');
+  }
+
 main {
     display: flex;
     justify-content: center; /*Centralização horizontal*/
@@ -148,7 +187,7 @@ section h1 {
     color: #866042;
     font-style: italic;
     text-align: center;
-    text-shadow: 3px 3px 4px #000000;
+    text-shadow: 3px 3px 4px #a09797;
 }
 
 aside {
@@ -188,22 +227,151 @@ article p {
     color: var(--cor-texto2)
 }
 
+article a {
+  color: var(--cor-texto2);
+  text-decoration: none;
+}
+
+article a:hover {
+  text-decoration: underline;
+}
+
 article img {
     max-width: 350px;
-    border-radius: 200px;
+    border-radius: 700px;
     margin: 20px;
 }
 
-@media screen and (max-width: 600px) {
-    main {
-        /*muda a direção dos filhos para colunas (vertical)*/
-        flex-direction: column;
-        }
-    section {
-        width: 100%;
-    }
-    aside {
-        width: 100%;
-    }
+.livro {
+    border-radius: 0px;
 }
-    
+
+/**************************************************
+             REGRAS DE RESPONSIVIDADE
+***************************************************/
+
+/* Computadores com tela pequena */
+@media (max-width: 1200px) {
+    body {
+      /*filter: hue-rotate(45deg);*/
+    }
+  
+    /* Esconde o texto das redes sociais */
+    #social ul li a span {
+      display: none; /* Não preserva o espaço do elemento */
+    }
+  
+    /* Ajusta o flex-direction do main para column para
+      passar o aside para baixo */
+    main {
+      flex-direction: column;
+    }
+  
+    /* section e aside passam a ter largura de 100% */
+    section, aside {
+      /* Usa a função calc() para descontar os 40px das margens
+        laterais dos elementos e evitar rolagem horizontal */
+      width: calc(100% - 40px);
+    }
+  
+    /* Os anúncios do article ficam na horizontal */
+    aside {
+      flex-direction: row;
+      /* Faz com que os articles fiquem com a mesma altura */
+      align-items: stretch;
+    }
+  
+    aside article {
+      margin: 0 30px;
+    }
+  }
+  
+  /* Dispositivos (tablets) */
+  @media (max-width: 992px) {
+    body {
+      /*filter: hue-rotate(90deg);*/
+    }
+    /* POR ENQUANTO não necessita de ajuste */
+  }
+  
+  /* Dispositivos (celulares) médios */
+  @media (max-width: 768px) {
+    body {
+      /*filter: hue-rotate(135deg);*/
+    }
+  
+    #menu-principal {
+      min-height: 56px;
+      padding: 0;
+      margin-top: 0;
+    }
+  
+    #menu-contraido {
+      margin-top: 40px;
+      width: 100%;
+    }
+  
+    #menu-contraido input, #menu-contraido span {
+      display: block; /* Reexibe o botão do menu */
+      left: 20px;
+      top: -38px;
+    }
+  
+    #menu-contraido ul {
+      display: none;    /* Esconder o menu */
+      margin-top: 30px;
+    }
+  
+    #menu-contraido ul li {
+      display: block;
+      margin: 6px 0;
+    }
+  
+    #menu-contraido ul li a {
+      width: 100%;
+      display: flex;
+    }
+  
+    #menu-contraido input:checked ~ ul {
+      display: block; /* Reexibe o menu quando o checkbox for marcado */
+    }
+  
+    #menu-contraido input:checked,  #menu-contraido input:checked ~ span {
+      top: -30px;
+    }
+  
+    /* Os anúncios do article voltam a ficar na vertical */
+    aside {
+      flex-direction: column;
+      /* "Desliga" o stretch do breakpoint anterior */
+      align-items: flex-start;
+    }
+  
+    aside article {
+      margin: 30px 0;
+    }
+  
+    /* Empilha os elementos do footer */
+    footer {
+      flex-direction: column;
+    }
+  
+    footer img, footer address {
+      margin-bottom: 20px;
+    }
+  
+  }
+  
+  /* Dispositivos (celulares) pequenos */
+  @media (max-width: 576px) {
+    body {
+      /*filter: hue-rotate(180deg);*/
+    }
+  
+    /* Empilha os elementos do header */
+    header {
+      flex-direction: column;
+    }
+  }
+  
+  /* O padrão do nosso CSS é para telas > 1200px */
