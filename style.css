@@ -141,6 +141,8 @@ header {
     display: none;
   }
   
+
+  
   /* O seletor ~ seleciona o elemento irmão */
   #menu-contraido input:checked ~ span {
     background-image: url('img/close-icon-48x48.png');

@@ -6,6 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ana Clara &bull; Psicóloga</title>
     <link rel="stylesheet" href="style.css">
+
+    <style>
+        body{font-family: Arial, Helvetica, sans-serif }
+        .content{display: flex;justify-content: center}
+        .contato{width: 100%;max-width: 500px;}
+        .form{display: flex;flex-direction: column}
+        .field{padding: 10px; margin-bottom: 15px;border: 1px solid #DDD;border-radius: 5px; font-family: Arial, Helvetica, sans-serif;font-size: 16px;}
+        textarea{height: 150px;}
+        
+
+
+    </style>
 </head>
 <body>
     <header>
@@ -58,11 +70,11 @@
         <section class="content">
 
             <div class="contato">
-                <h3>Formulário de contato</h3>
+                <h1 id="form">Formulário de contato</h1>
                 <form class="form" method="POST" action="./email.php">
-                    <input class="fild" name="name" placeholder="Nome">
-                    <input class="fild" name = "email" placeholder="E-mail">
-                    <textarea class="field" name="mesage" placeholder="Digite sua duvida aqui."></textarea>
+                    <input id="nome" class="fild" name="name" placeholder="Nome">
+                    <input id="email" class="fild" name = "email" placeholder="E-mail">
+                    <textarea id="duvida" class="field" name="mesage" placeholder="Digite sua duvida aqui."></textarea>
                     <input type="submit" value= "Enviar">
                 </form>
             </div>
@@ -73,7 +85,15 @@
     </main>
 
     <footer>
-        Footer (Rodapé)
+        <img src="img/logo.svg" alt="Logotipo Ana Clara">
+        <address>
+            Av. José Rodrigues da Costa Sobrinho, 1550 <br>
+            Jardim Dr. Antonio Petraglia<br>
+            Franca/SP<br>
+            <a href="tel:+5516991302258">(16) 99130-2258</a><br>
+            <a href="rezendeanaclara@usp.br">rezendeanaclara@usp.br</a>
+        </address>
+        <a href="#top">&uarr; Voltar ao topo </a>
     </footer>
 </body>
 </html>
