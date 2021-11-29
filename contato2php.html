@@ -69,7 +69,15 @@
     <main>
         <!--Main (área principal de conteúdo)-->
         <section class="content">
-            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf6aBZ6BK6ootIyED8oMaJYUlzUzF3ZRReEsb7JzvDYb2-ysQ/viewform?embedded=true" width="640" height="542" frameborder="0" marginheight="0" marginwidth="0">Carregando…</iframe>
+
+            <div class="contato">
+                <h1 id="form">Formulário de contato</h1>
+                <form class="form" method="POST" action="./email.php">
+                    <input id="nome" class="fild" name="name" placeholder="Nome">
+                    <input id="email" class="fild" name = "email" placeholder="E-mail">
+                    <textarea id="duvida" class="field" name="mesage" placeholder="Digite sua duvida aqui."></textarea>
+                    <input type="submit" value= "Enviar">
+                </form>
             </div>
         </section>
         
